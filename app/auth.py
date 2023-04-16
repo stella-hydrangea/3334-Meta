@@ -1,3 +1,5 @@
+import re
+
 from flask import render_template, redirect, request
 from flask_login import LoginManager, login_user, UserMixin
 from flask_sqlalchemy import SQLAlchemy
@@ -26,6 +28,7 @@ class LoginUser(UserMixin):
         self.username = self.user.username
         self.email = self.user.email
         self.password = self.user.password
+        self.bank = self.user.bank
 
 
 @login_manager.user_loader
@@ -40,6 +43,8 @@ def user_loader(user_id):
 def login():
     username = request.form["username"]
     password = request.form["password"]
+    if get_user(username) is None:
+        return False
     user = LoginUser(username)
     if verify_password_hash(password, user.password):
         login_user(user)
@@ -55,6 +60,8 @@ def register(data, db: SQLAlchemy):
         errors.append("User name too short")
     if get_user(data["username"]) is not None:
         errors.append("User name existed")
+    if not re.fullmatch("^\S+@\S+\.\S+$", data["email"]):
+        errors.append("Email invalid")
     if len(errors) > 0:
         return render_template("register.html", errors=errors)
     hashed = password_to_hash(data["password"])
