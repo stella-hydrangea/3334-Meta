@@ -46,6 +46,7 @@ class Item(db.Model):
     name = Column(String, unique=True, nullable=False)
     owner = Column("owner", ForeignKey(User.id), nullable=False)
     image = Column("image", ForeignKey(Image.id), nullable=False)
+    create_time = Column(DateTime, default=datetime.now())
 
 
 class TransactionRequest(db.Model):
