@@ -1,7 +1,7 @@
 from flask import Flask, render_template, make_response, request, redirect
 from flask_login import current_user, login_required, logout_user
 
-from auth import register, login_manager, login, get_user
+from auth import register, login_manager, login
 from db import db
 
 
@@ -21,7 +21,7 @@ with app.app_context():
 @app.route("/")
 @login_required
 def index():
-    return make_response(redirect("/index"))
+    return make_response(render_template("testing/GamePlay_New.html"))
 
 
 @app.route("/index")
