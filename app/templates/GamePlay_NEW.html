@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="GamePlay.css">
+
+</head>
+<body>
+    <div class="row" style="height: 10%;">
+        <ul style="background-color: wheat;">
+            <li style="list-style-type: none;"><a href="" id="navbar">About</a></li>
+            <li style="list-style-type: none;"><a href="" id="navbar">Trade & Chat</a></li>
+            <li style="list-style-type: none;"><a href="" id="navbar">Log History</a></li>
+            <li style="list-style-type: none; float: right;"><a href="" id="navbar">Log out</a></li>
+            <li style="display: block; padding: 20px; float:right; color: #333333; font-size: large; font-weight: 500;">Coin : </li>
+        </ul>
+    </div>
+    <div id="context-menu">
+        <div id="char" class="item">Chat/Trade</div>
+        <div id="targetName" class="item"></div>
+    </div>
+    <div class="gameScreen">
+        <div class="gameContainer">
+            <canvas tabindex=0></canvas>
+            <button id="start" type="button" class="btn btn-success">Start</button>
+            <div id="playerInfo">
+                <div class="decorat">
+                    <table id="nameTable">
+                        <tr>
+                        <th>Player</th>
+                        </tr>
+                        <tr>
+                        <td>Alice</td>
+                        </tr>
+                        <tr>
+                        <td>Bob</td>
+                        </tr>
+                    </table>
+                    <div class="overlay"></div>
+                </div>
+            </div>
+            <div id="requestArea">
+            </div>
+            <div id="chatandtrade">
+                <div class="container">
+                    <div class="row">
+                        <div id="tradetarget">Bob:</div>
+                        <table class="col-12" id="targetTradeInvent">
+                            <tr id="targetInventGroup">
+                                <td class="targetTradeInvent-btn" ></td>
+                                <td class="targetTradeInvent-btn"></td>
+                                <td class="targetTradeInvent-btn"></td>
+                                <td class="targetTradeInvent-btn" ></td>
+                                <td class="targetTradeInvent-btn" ></td>
+                                <td class="targetTradeInvent-btn" ></td>
+                                <td class="targetTradeInvent-btn" ></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div id="tradeuser">You: (Please put your trade item here)</div>
+                        <table class="col-12" id="userTradeInvent">
+                            <tr id="userInventGroup">
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                                <td class="tradeInvent-btn" ondrop="drop(event)" ondragover="allowDrop(event)" ></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="chatBox col-12">
+                            
+                        </div>
+                    </div>
+                    <div class="row chatForm">
+                        <div>
+                            <input class="chatInput">
+                        </div>
+                        <div><button id="chatSubmit" class="btn btn-success">Submit</button></div>
+                    </div>
+                    <div class="row">
+                        <div class='col-12'>
+                            <button id="leaveChatandTrade" class="btn btn-success">Leave</button>
+                            <button id="TradeChatandTrade" class="btn btn-danger">Trade</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="inventory">
+                <div class="overlay"></div>
+                <table id="tableInvent">
+                    <tr id="inventGroup">
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                        <td class="invent-btn" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                      </tr>
+                </table>
+            </div>
+        </div>
+    </div> 
+    <script src="GamePlay.js"></script>
+</body>
+</html>

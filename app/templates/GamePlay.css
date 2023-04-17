@@ -1,0 +1,325 @@
+html,body {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #555555;
+}
+
+#navbar {
+    list-style-type: none;
+    float: left;
+    display: block;
+    color: #333333;
+    font-size: large;
+    font-weight: 500;
+    padding: 20px;
+}
+#navbar:hover {background-color:#111111; color: #FFFFFF; text-decoration:underline}
+
+#context-menu{
+    position: fixed;
+    z-index: 100;
+    width: 130px;
+    background-color: black;
+    border-radius:5px ;
+    display: none;
+}
+
+#context-menu .item{
+    padding: 8px 10px;
+    font-size: 15px;
+    color:white;
+    cursor: pointer;
+    border-radius: inherit;
+    border-bottom:1px solid white ;
+}
+
+#context-menu .item:last-child{
+    display: none;
+}
+
+#context-menu .item:hover{
+    background-color: rgb(92, 90, 90);
+}
+
+#context-menu{
+    background:black;
+}
+
+#context-menu.active{
+    display: block;
+}
+
+.gameScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    border: 3px solid green;
+}
+
+.gameContainer{
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#start{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 200px;
+    height: 80px;
+    display: none;
+}
+
+#startPoint{
+    border: 1px solid black;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#startPoint canvas{
+    width: fit-content;
+    height: fit-content;
+
+}
+
+#otherPlayerPoint{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#otherPlayerPoint canvas{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#playerInfo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    display: none;
+
+}   
+
+#playerInfo.active{
+    display: flex;
+}
+
+.decorat{
+    position: relative;
+    margin-top:auto;
+    margin-bottom: auto; 
+    min-width: 200px;    
+    height: fit-content;                                                                                                                               
+}
+
+table{
+}
+#nameTable table,#nameTable th,#nameTable td {
+    border:1px solid black;
+    width: fit-content;
+    min-width: 200px;
+    height: fit-content;
+  }
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% ;
+    border: 1px solid black ;
+    background-color: black;       
+    opacity: 0.4;        
+    pointer-events: none;                                                                                                                                                                                                                    
+}           
+
+#request{
+    width: fit-content;
+    min-width: 300px;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-color: black;
+    color: aliceblue;
+}
+
+
+
+#requestContent,#accept-btn,#decline-btn{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#accept-btn:hover,#decline-btn:hover{
+    cursor: pointer;
+    background-color: rgb(82, 82, 82);
+}
+
+#accept-btn{
+    border-right: 1px solid white;
+}
+
+#request .progress{
+    width: 100%;
+    height: 5px;
+    padding: 0;
+    margin: 2px;
+}
+
+#inventory{
+    position: absolute;
+    bottom:50px;
+    left: 50%;
+    width:700px;
+    height: 100px;
+    transform: translateX(-50%);
+    display: none;
+}
+
+#inventory.active{
+    display: block;
+}
+
+#tableInvent{
+    height: 100%;
+    width: 100%;
+}
+#tableInvent tr{
+    min-width: 100%;
+}
+#tableInvent td{
+    display:inline-flex;
+    min-width: 100px;
+    height: 100%;
+    border: 3px solid black;
+    border-right: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#tableInvent td:last-child{
+    border-right:3px solid black ;
+}
+
+.inventBtn {
+    padding: 0;
+    margin: 0;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 3;
+}
+
+#chatandtrade{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width:600px;
+    height: fit-content;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    display: none;
+}
+
+#chatandtrade.active{
+    display: block;
+}
+
+#chatandtrade table{
+    margin-top:10px ;
+    margin-bottom:10px ;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#chatandtrade td{
+    display:inline-flex;
+    min-width: 70px;
+    height: 70px;
+    border-right: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.chatBox{
+    margin-top: 20px;
+    max-width: 500px;
+    height: 200px;
+    margin-left:50px ;
+    background-color: white;
+    border-radius:3px ;
+    padding: 2px;
+}
+
+.chatInput{
+    width: 420px;
+    height: 30px;
+    margin-left:50px ;
+    background-color: rgb(255, 255, 255);
+    border-radius:3px;
+    padding: 2px;
+}
+
+#chatandtrade td .inventBtn {
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 3;
+}
+
+#tradetarget,#tradeuser{
+    padding-top:10px;
+    padding-left: 30px;
+    padding-bottom:0px ;
+}
+
+#leaveChatandTrade{
+    margin: 10px 370px 10px 30px;
+}
+
+#chatSubmit{
+    width:80px;
+    height: 30px;
+    border-radius:0 ;
+}
+
+
+
+
+
+
+
+
